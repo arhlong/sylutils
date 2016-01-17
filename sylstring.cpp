@@ -3,25 +3,25 @@
 
 namespace syl
 {
-	string::string()
+	String::String()
 	{
 		data = new char[1];
 		data[0] = '\0';
 	}
 
-	string::string(const char *s)
+	String::String(const char *s)
 	{
 		data = new char[strlen(s) + 1];
 		strcpy(data,s);
 	}
 
-	string::string(const string &s)
+	String::String(const String &s)
 	{
 		data = new char[strlen(s.data) + 1];
 		strcpy(data,s.data);
 	}
 
-	string& string::operator=(const string &s)
+	String& String::operator=(const String &s)
 	{
 		if(this != &s)
 		{
@@ -33,17 +33,17 @@ namespace syl
 		return *this;
 	}
 
-	string::~string()
+	String::~String()
 	{
 	   	delete [] data;
 	}
 
-	char* string::c_str() const
+	char* String::c_str() const
 	{
 		return data;
 	}
 
-	std::ostream& operator<<(std::ostream &os,const string &s)
+	std::ostream& operator<<(std::ostream &os,const String &s)
 	{
 		return os<<s.data;
 	}

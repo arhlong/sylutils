@@ -1,19 +1,20 @@
 #ifndef __SYL_STRING__
 #define __SYL_STRING__
 #include <string.h>
+#include <ostream>
 
 namespace syl
 {
-class string
+class String
 {
 public:
-	string();
-	string(const char *s);
-	string(const string &s);
-	string& operator=(const string &s);
-	~string();
+	String();
+	String(const char *s);
+	String(const String &s);
+	String& operator=(const String &s);
+	~String();
 	char* c_str() const;
-	friend std::ostream& operator<<(std::ostream &os,const string &s);
+	friend std::ostream& operator<<(std::ostream &os,const String &s);
 
 private:
 	char *data;

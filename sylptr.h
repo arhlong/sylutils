@@ -4,26 +4,26 @@
 namespace syl
 {
 template<typename T>
-class shared_ptr
+class Shared_ptr
 {
 public:
-	explicit shared_ptr(T *p = 0)
+	explicit Shared_ptr(T *p = 0)
 		:ptr(p),count(new int(1))
 	{
 	}
 
-	shared_ptr(const shared_ptr<T> &p)
+	Shared_ptr(const Shared_ptr<T> &p)
 		:ptr(p.ptr),count(p.count)
 	{
 		increase();
 	}
 
-	~shared_ptr()
+	~Shared_ptr()
 	{
 		dispose();
 	}
 
-	shared_ptr<T>& operator=(const shared_ptr<T> &p)
+	Shared_ptr<T>& operator=(const Shared_ptr<T> &p)
 	{
 		if(this != &p)
 		{
