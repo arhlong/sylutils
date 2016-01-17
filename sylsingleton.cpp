@@ -4,6 +4,9 @@
 
 namespace syl
 {
+	std::mutex* syl::TimerManager::mtx = new std::mutex;
+	TimerManager* TimerManager::p = 0;
+
 	TimerManager::TimerManager()
 	{
 	}

@@ -4,9 +4,6 @@
 #include "sylstring.h"
 #include "sylsingleton.h"
 
-std::mutex* syl::TimerManager::mtx = new std::mutex;
-syl::TimerManager* syl::TimerManager::p = 0;
-
 int main()
 {
 	char *s1 = "s1";
