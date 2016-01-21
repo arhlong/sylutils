@@ -3,7 +3,7 @@
 
 namespace syl
 {
-template <class T>
+template<typename T>
 class shared_ptr
 {
 public:
