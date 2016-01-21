@@ -7,7 +7,8 @@ namespace syl
 class string
 {
 public:
-	string(const char *s = 0);
+	string();
+	string(const char *s);
 	string(const string &s);
 	string& operator=(const string &s);
 	~string();

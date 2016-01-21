@@ -3,18 +3,16 @@
 
 namespace syl
 {
+	string::string()
+	{
+		data = new char[1];
+		data[0] = '\0';
+	}
+
 	string::string(const char *s)
 	{
-		if(s)
-		{
-			data = new char[strlen(s) + 1];
-			strcpy(data,s);
-		}
-		else
-		{
-			data = new char[1];
-			data[0] = '\0';
-		}
+		data = new char[strlen(s) + 1];
+		strcpy(data,s);
 	}
 
 	string::string(const string &s)

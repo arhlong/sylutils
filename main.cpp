@@ -10,7 +10,11 @@ syl::TimerManager* syl::TimerManager::p = 0;
 int main()
 {
 	char *s1 = "s1";
-	syl::string s2(s1);
+	syl::string s2 = "s2";
+	syl::string s3;
+	s3 = "s3";
+	s3 = s1;
+	syl::string s4(s1);
 	syl::shared_ptr<syl::string> p1(new syl::string("hello world!"));
 	std::cout<<p1->c_str()<<std::endl;
 	std::cout<<*p1<<std::endl;
@@ -31,6 +35,7 @@ int main()
 	t2->showName();
 	std::cout<<"t2 addr:"<<(int*)t2<<std::endl;
 
+	//delete syl::TimerManager::mtx;
 	//syl::TimerManager t3 = *t2;
 	//t3.showName();
 

@@ -29,7 +29,7 @@ namespace syl
 		return p;
 	}
 
-	void TimerManager::setName(const std::string &s)
+	void TimerManager::setName(const syl::string &s)
 	{
 		name = s;
 	}
