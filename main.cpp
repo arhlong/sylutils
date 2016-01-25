@@ -1,6 +1,7 @@
 #include <iostream>
 #include <memory>
 #include <mutex>
+#include <string>
 #include "sylptr.h"
 #include "sylstring.h"
 #include "timer.h"
@@ -18,11 +19,16 @@ public:
 		std::cout<<"contruct class Base."<<std::endl;
 	}
 
-	virtual ~Base()
-	{
-		std::cout<<"descontruct class base."<<std::endl;
-	}
+	virtual ~Base() = 0;
+	//{
+		//std::cout<<"descontruct class base."<<std::endl;
+	//}
 };
+
+Base::~Base()
+{
+	std::cout<<"descontruct class base."<<std::endl;
+}
 
 class Derive : public Base
 {
@@ -111,16 +117,6 @@ int main()
 		t2->showName();
 		std::cout<<"t2 addr:"<<(int*)t2<<std::endl;
 		//delete t2;
-
-		//TimerManager t3;
-		//TimerManager t3 = *t2;
-		//t3 = *t2;
-		//t2->showName("test 2");
-		//t2->showName();
-		//std::cout<<"t3 addr:"<<(int*)&t3<<std::endl;
-
-		//delete syl::TimerManager::mtx;
-		//syl::TimerManager t3 = *t2;
 		//t3.showName();
 		//delete t;
 
@@ -128,6 +124,18 @@ int main()
 		sing1->setName("test sing");
 
 		Derive d;
+
+		enum class egg {SMALL,LARGE};
+        std::cout<<"small:"<<int(egg::SMALL)<<" large:"<<int(egg::LARGE)<<std::endl;
+
+		//std::string stdstr;
+		//std::cout<<"size stdstr:"<<sizeof(stdstr)<<std::endl;
+		String sylstr;
+		std::cout<<"size sylstr:"<<sizeof(sylstr)<<std::endl;
+		//stdstr="12345678901234567890";
+		sylstr="1234567890123456789012345";
+		//std::cout<<"size stdstr:"<<sizeof(stdstr)<<std::endl;
+		std::cout<<"size sylstr:"<<sizeof(sylstr)<<std::endl;
 	}
 
 	std::cin.get();
